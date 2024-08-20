@@ -11,7 +11,7 @@ export default defineConfig(({ command }) => {
     root: 'src',
     build: {
       sourcemap: true,
-
+      target: 'es2020', 
       rollupOptions: {
         input: glob.sync('./src/*.html'),
         output: {
@@ -24,6 +24,11 @@ export default defineConfig(({ command }) => {
         },
       },
       outDir: '../dist',
+    },
+    optimizeDeps: {
+      esbuildOptions: {
+        target: 'es2020', 
+      },
     },
     plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
   };
