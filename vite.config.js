@@ -1,5 +1,5 @@
+import * as glob from 'glob';
 import { defineConfig } from 'vite';
-import glob from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 
@@ -11,7 +11,7 @@ export default defineConfig(({ command }) => {
     root: 'src',
     build: {
       sourcemap: true,
-      target: 'es2020', 
+      target: 'es2020',
       rollupOptions: {
         input: glob.sync('./src/*.html'),
         output: {
@@ -27,7 +27,7 @@ export default defineConfig(({ command }) => {
     },
     optimizeDeps: {
       esbuildOptions: {
-        target: 'es2020', 
+        target: 'es2020',
       },
     },
     plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
