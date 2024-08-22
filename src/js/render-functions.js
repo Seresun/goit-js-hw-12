@@ -9,5 +9,5 @@ export function renderImages(images) {
       </div>
     </a>
   `).join('');
-  gallery.innerHTML = markup;
+  gallery.insertAdjacentHTML('beforeend', markup);
 }
